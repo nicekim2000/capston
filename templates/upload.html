@@ -1,0 +1,38 @@
+{% with messages = get_flashed_messages() %}
+   {% if messages %}
+      <script>
+         alert("{{messages[-1]}}")
+      </script>
+   {% endif%}
+{% endwith %}
+
+
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+  <head>
+    <title>Yolo File Upload</title>
+  </head>
+
+  <body>
+    <center><h1>YOLOv5 on K3S</h1></center>
+    <hr width="100%" color="black"/>
+    <center><h3>Upload File!</h3></center>
+    <hr width="100%" color="black"/>
+
+    <center><h4>Choose Single or Multi node</h4></center>
+    <center><form method="post" action='/Selction'>
+      <br>
+      <input type='radio' name='mode' value='single' />Single
+      <input type='radio' name='mode' value='multi' />Multi
+      <input type = "submit"/>
+      <br>
+    </form></center>
+
+    <br><br>
+    <center><h4>Press the init button before starting</h4></center>
+    <center><form action="/init" method="post">
+      <button type="submit">INIT</button>
+    </form></center>
+  </body>
+</html>
