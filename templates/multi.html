@@ -1,0 +1,30 @@
+{% with messages = get_flashed_messages() %}
+   {% if messages %}
+      <script>
+         alert("{{messages[-1]}}")
+      </script>
+   {% endif%}
+{% endwith %}
+
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+  <head>
+    <title>Yolo File Upload</title>
+  </head>
+
+  <body>
+    <center><h1>YOLOv5 on K3S</h1></center>
+    <hr width="100%" color="black"/>
+    <center><h3>Upload File!</h3></center>
+    <hr width="100%" color="black"/>
+
+    <center><h4>Maximum file size is 100MB</h4></center>
+    <center><h4>Multi Mode</h4></center>
+    <center><form method="post" action="/multiupload" enctype="multipart/form-data">
+      <input type = "file" name = "file" />
+      <input type = "submit"/>
+    </form></center>
+
+  </body>
+</html>

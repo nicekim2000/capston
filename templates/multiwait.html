@@ -1,0 +1,32 @@
+{% with messages = get_flashed_messages() %}
+   {% if messages %}
+      <script>
+         alert("{{messages[-1]}}")
+      </script>
+   {% endif%}
+{% endwith %}
+
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+  <head>
+    <title>Yolo File Upload</title>
+  </head>
+
+  <body>
+    <center><h1>YOLOv5 on K3S</h1></center>
+    <center><h4>Multi Mode</h4></center>
+    <center><h3>Video Information</h3></center>
+    <center>Frame width: {{frame_weight}}</center>
+    <center>Frame height: {{frame_height}}</center>
+    <center>Frame count: {{frame_count}}</center>
+    <center>FPS: {{fps}}</center>
+    <center>Video length: {{video_length}} sec</center>
+    <center><h3>YOLOv5 is Ready</h3></center>
+    <center><h4>Click the Start button</h4></center>
+    <center><form action="/multirefresh" method="post">
+        <button type="submit">start</button>
+    </form></center>
+    <center><h4>Press the button and wait for it to finish</h4></center>
+  </body>
+</html>

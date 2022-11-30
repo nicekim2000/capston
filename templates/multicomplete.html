@@ -1,0 +1,33 @@
+{% with messages = get_flashed_messages() %}
+   {% if messages %}
+      <script>
+         alert("{{messages[-1]}}")
+      </script>
+   {% endif%}
+{% endwith %}
+
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+  <head>
+    <title>Yolo File Upload</title>
+  </head>
+
+  <body>
+    <center><h1>YOLOv5 on K3S</h1></center>
+    <center><h4>Multi Mode</h4></center>
+    <center><h3>Success!</h3></center>
+    <center>Time to distrubute: {{Dtime}}</center>
+    <center>Time to execute: {{Etime}}</center>
+    <center>Time to combine: {{Ctime}}</center>
+    <center>Total time: {{Wtime}}</center>
+    <center><h4>Download Please!</h4></center>
+    <center><form action="/multidown" method="post">
+      <button type="submit">download</button>
+    </form></center>
+    <br><br>
+    <center><form action="/gotohome" method="post">
+      <button type="submit">Home</button>
+    </form></center>
+  </body>
+</html>
